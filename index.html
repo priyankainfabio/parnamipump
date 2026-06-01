@@ -141,7 +141,7 @@
     /* HERO */
 
     .hero{
-      min-height:100vh;
+      min-height:90vh;
       overflow:hidden;
       background:#000;
     }
@@ -461,13 +461,32 @@
     }
 
     .landmarks-slider{
-      max-width:1500px;
-      margin:0 auto;
-      padding:0 64px;
-      display:grid;
-      grid-template-columns:1.2fr 1fr 1fr;
-      gap:26px;
-    }
+  max-width:1500px;
+  margin:0 auto;
+  padding:0 64px;
+  display:flex;
+  gap:26px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+}
+
+.landmarks-slider::-webkit-scrollbar{
+  display:none;
+}
+
+.project-card{
+  min-width:430px;
+  scroll-snap-align:start;
+}
+
+.project-card.active{
+  min-width:560px;
+}
+
+.project-card:nth-child(n+4){
+  display:block;
+}
 
     .project-card{
       position:relative;
@@ -481,7 +500,7 @@
       transition:.75s cubic-bezier(.2,.8,.2,1);
     }
 
-    .project-card:nth-child(n+4){display:none}
+    
 
     .project-card:hover{
       transform:translateY(-12px);
@@ -1181,7 +1200,7 @@
   <section class="landmarks section-bg-grid" id="projects">
     <div class="landmarks-top reveal">
       <div class="landmarks-left">
-        <h2>Our Projecs</h2>
+        <h2>Our Projects</h2>
       </div>
       <div class="landmarks-right">
         <p>
@@ -1200,7 +1219,7 @@
       </div>
 
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=1800&auto=format&fit=crop" alt="Fire Fighting Systems">
+        <img src="fire.jpg" alt="Fire Fighting Systems">
         <div class="project-overlay"></div>
         <div class="project-content"><span>02</span><h3>Fire Fighting Systems</h3><p>Large-scale fire safety infrastructure execution.</p></div>
       </div>
